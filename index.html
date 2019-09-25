@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>遊戯王</title>
+    <title>男は黙ってカードゲーム</title>
     <style>
         .hp{
             width:100%;
@@ -164,6 +164,16 @@
         document.getElementById("la2").innerHTML=nowla2
         document.getElementById("se1").innerHTML=nowse1
         document.getElementById("se2").innerHTML=nowse2
+        if(nowpp1<0){
+            document.getElementById("hp1").style.backgroundColor="#ff0000"
+        }else{
+            document.getElementById("hp1").style.backgroundColor="#ffffff"
+        }
+        if(nowpp2<0){
+            document.getElementById("hp2").style.backgroundColor="#ff0000"
+        }else{
+            document.getElementById("hp1").style.backgroundColor="#ffffff"
+        }
     }
     </script>
 </body>
