@@ -20,6 +20,9 @@
         .blue{
             color:blue;
         }
+        .red{
+            color:red;
+        }
     </style>
 </head>
 <body>
@@ -33,8 +36,8 @@
                 <td class="big">PP <span id="hp2">0</span></td>
         </tr>
         <tr>
-                <td><span class="green">land <span id="la1">0</span></span><span class="blue"> sea <span id="se1">0</span></span></td>
-                <td><span class="green">land <span id="la2">0</span></span><span class="blue"> sea <span id="se2">0</span></span></td>
+                <td><span class="green">land <span id="la1">0</span></span><span class="blue"> sea <span id="se1">0</span></span><span class="red"> human <span id="hu1">0</span></span></td>
+                <td><span class="green">land <span id="la2">0</span></span><span class="blue"> sea <span id="se2">0</span></span><span class="red"> human <span id="hu2">0</span></span></td>
         </tr>
         <tr>
                 <td><input type="button" value="PP +100" onclick="pp(100);"><input type="button" value="PP +1000" onclick="pp(1000);"><input type="button" value="PP -100" onclick="mpp(100);"><input type="button" value="PP -1000" onclick="mpp(1000);"></td>
@@ -45,8 +48,8 @@
             <td><input type="number" id="ninyi2" value="0"><input type="button" value="＋" onclick="pp2(document.getElementById('ninyi2').value)"><input type="button" value="ー" onclick="mpp2(document.getElementById('ninyi2').value)"></td>
         </tr>
         <tr>
-            <td><input type="button" value="Land +1" onclick="riku(1)"><input type="button" value="Land -1" onclick="riku(-1)"><input type="button" value="Sea +1" onclick="umi(1)"><input type="button" value="Sea -1" onclick="umi(-1)"></td>
-            <td><input type="button" value="Land +1" onclick="riku2(1)"><input type="button" value="Land -1" onclick="riku2(-1)"><input type="button" value="Sea +1" onclick="umi2(1)"><input type="button" value="Sea -1" onclick="umi2(-1)"></td>
+            <td><input type="button" value="Land +1" onclick="riku(1)"><input type="button" value="Land -1" onclick="riku(-1)"><input type="button" value="Sea +1" onclick="umi(1)"><input type="button" value="Sea -1" onclick="umi(-1)"><input type="button" value="Human +1" onclick="hito(1)"><input type="button" value="Human -1" onclick="hito(-1)"></td>
+            <td><input type="button" value="Land +1" onclick="riku2(1)"><input type="button" value="Land -1" onclick="riku2(-1)"><input type="button" value="Sea +1" onclick="umi2(1)"><input type="button" value="Sea -1" onclick="umi2(-1)"><input type="button" value="Human +1" onclick="hito2(1)"><input type="button" value="Human -1" onclick="hito2(-1)"></td>
         </tr>
     </table>
     <script>
@@ -62,6 +65,8 @@
     var nowla2=0;
     var nowse1=0;
     var nowse2=0;
+    var nowhu1=0;
+    var nowhu2=0;
     var playd=0;
     function riku(atai){
         nowla1+=atai
@@ -71,12 +76,20 @@
         nowse1+=atai
         reload()
     }
+    function hito(atai){
+        nowhu1+=atai
+        reload()
+    }
     function riku2(atai){
         nowla2+=atai
         reload()
     }
     function umi2(atai){
         nowse2+=atai
+        reload()
+    }
+    function hito2(atai){
+        nowhu2+=atai
         reload()
     }
     function event1() {
@@ -186,6 +199,8 @@
         document.getElementById("la2").innerHTML=nowla2
         document.getElementById("se1").innerHTML=nowse1
         document.getElementById("se2").innerHTML=nowse2
+        document.getElementById("hu1").innerHTML=nowhu1
+        document.getElementById("hu2").innerHTML=nowhu2
     }
     </script>
 </body>
